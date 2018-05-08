@@ -7,6 +7,8 @@ import flixel.util.FlxColor;
 import openfl.Lib;
 import openfl.events.Event;
 
+import extension.leaderboards.Leaderboards;
+
 class PlayState extends FlxState {
 	private var eventText:FlxText; // Event log text in top left of screen
 
@@ -24,9 +26,6 @@ class PlayState extends FlxState {
 		
 		Lib.current.stage.addEventListener(Event.ACTIVATE, function(p:Dynamic):Void {
 			addText("App received ACTIVATE event");
-			#if (android || ios)
-			addText("Current badge count is reported as: " + Notifications.getApplicationIconBadgeNumber());
-			#end
 		});
 		Lib.current.stage.addEventListener(Event.DEACTIVATE, function(p:Dynamic):Void {
 			addText("App received DEACTIVATE event");
@@ -57,7 +56,7 @@ class PlayState extends FlxState {
 
 class BigButton extends FlxButton {
 	public function new(text:String, onPress:Void->Void) {
-		super(text, onPress);
+		super(0, 0, text, onPress);
 		scale.set(2, 2);
 		updateHitbox();
 	}

@@ -28,10 +28,11 @@
 	
 	<haxelib name="flixel" />
 	
-	<!-- Change this line to the version of the push notifications module you want to build against! -->
-	<!-- <haxelib name="samcodes-googleplaygames" /> -->
-	<!-- <haxelib name="samcodes-gamecircle" /> -->
-	<!-- <haxelib name="extension-gamecenter" /> -->
+	<!-- Change this line to the version of the leaderboards module you want to build against! -->
+	<!-- One of the following: googleplaygames gamecircle gamecenter gamejolt kongregate -->
+	<haxedef name="gamecircle" />
+	
+	<include path="lib/samcodes-leaderboards" />
 	
 	<!---------------------------------HAXEDEFINES---------------------------------->
 	
