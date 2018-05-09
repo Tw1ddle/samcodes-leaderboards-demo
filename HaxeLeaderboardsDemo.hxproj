@@ -15,22 +15,22 @@
   </output>
   <!-- Other classes to be compiled into your SWF -->
   <classpaths>
-    <class path="C:\HaxeToolkit\haxe\lib\flixel\git" />
-    <class path="C:\HaxeToolkit\haxe\lib\lime\2,9,1" />
-    <class path="C:\HaxeToolkit\haxe\lib\openfl\3,6,1" />
-    <class path="C:\HaxeToolkit\haxe\lib\openfl\7,1,2\src" />
-    <class path="C:\HaxeToolkit\haxe\lib\lime\6,2,0" />
+    <class path="C:\HaxeToolkit\haxe\lib\flixel\4,4,0" />
+    <class path="C:\HaxeToolkit\haxe\lib\openfl\8,0,1\src" />
+    <class path="C:\HaxeToolkit\haxe\lib\lime\6,3,0" />
     <class path="C:\HaxeToolkit\haxe\lib\hscript\2,2,0" />
     <class path="source" />
-    <class path="C:\HaxeToolkit\haxe\lib\openfl\7,1,2\src\externs\core\openfl" />
-    <class path="C:\HaxeToolkit\haxe\lib\openfl\7,1,2\src\externs\extras" />
+    <class path="C:\HaxeToolkit\haxe\lib\openfl\8,0,1\src\externs\core\openfl" />
+    <class path="C:\HaxeToolkit\haxe\lib\openfl\8,0,1\src\externs\extras" />
     <class path="lib\samcodes-leaderboards" />
     <class path="lib\samcodes-leaderboards\src" />
+    <class path="lib\samcodes-leaderboards\lib\samcodes-gamecircle" />
+    <class path="lib\samcodes-leaderboards\lib\samcodes-gamecircle\src" />
     <class path="export\android\haxe" />
   </classpaths>
   <!-- Build options -->
   <build>
-    <option directives="flixel=4.3.0&#xA;lime=2.9.1&#xA;openfl=3.6.1&#xA;openfl=7.1.2&#xA;lime=6.2.0&#xA;hscript=2.2.0&#xA;HXCPP_QUIET&#xA;FLX_NO_KEYBOARD&#xA;gamecircle&#xA;FLX_NO_MOUSE&#xA;FLX_NO_GAMEPAD&#xA;FLX_NO_FOCUS_LOST_SCREEN&#xA;tools=6.2.0&#xA;FLX_NO_DEBUG&#xA;no-compilation&#xA;native&#xA;lime-native&#xA;lime-vorbis&#xA;openfl-native&#xA;lime-cffi&#xA;android&#xA;mobile&#xA;android&#xA;android-9&#xA;display" />
+    <option directives="flixel=4.4.0&#xA;openfl=8.0.1&#xA;lime=6.3.0&#xA;hscript=2.2.0&#xA;gamecircleleaderboards&#xA;FLX_NO_KEYBOARD&#xA;FLX_NO_MOUSE&#xA;FLX_NO_GAMEPAD&#xA;FLX_NO_FOCUS_LOST_SCREEN&#xA;tools=6.3.0&#xA;FLX_NO_DEBUG&#xA;no-compilation&#xA;native&#xA;lime-native&#xA;lime-vorbis&#xA;openfl-native&#xA;lime-cffi&#xA;android&#xA;mobile&#xA;android&#xA;android-9&#xA;display" />
     <option flashStrict="False" />
     <option noInlineOnDebug="True" />
     <option mainClass="ApplicationMain" />

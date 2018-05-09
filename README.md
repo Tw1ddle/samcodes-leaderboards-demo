@@ -6,7 +6,7 @@ Minimal demonstration of achievements and leaderboards in Haxe.
 
 ## Features
 Demonstrates simple sign in, leaderboards and achievements via the following libraries:
-* ~~Google Play Games - [samcodes-googleplaygames](https://github.com/Tw1ddle/samcodes-googleplaygames)~~
+* ~~Google Play Games - [extension-googleplaygames](https://github.com/HaxeExtension/extension-googleplaygames)~~
 * Amazon GameCircle - [samcodes-gamecircle](https://github.com/Tw1ddle/samcodes-gamecircle)
 * ~~iOS GameCenter - [extension-gamecenter](https://github.com/openfl/extension-gamecenter)~~
 * ~~GameJolt - [FlxGameJolt](https://github.com/HaxeFlixel/flixel-addons)~~

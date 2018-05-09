@@ -1,13 +1,23 @@
 package states;
 
+import extension.leaderboards.Leaderboards;
+import flixel.FlxG;
 import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.util.FlxColor;
+import listener.DemoGameCircleListener;
+import listener.DemoGooglePlayListener;
 import openfl.Lib;
 import openfl.events.Event;
 
-import extension.leaderboards.Leaderboards;
+#if gamecircleleaderboards
+import extension.leaderboards.GameCircleLeaderboards;
+#end
+
+#if googleplayleaderboards
+import extension.leaderboards.GooglePlayLeaderboards;
+#end
 
 class PlayState extends FlxState {
 	private var eventText:FlxText; // Event log text in top left of screen
@@ -19,10 +29,8 @@ class PlayState extends FlxState {
 		super.create();
 		bgColor = FlxColor.BLACK;
 		
-		eventText = new FlxText();
+		eventText = new FlxText(0, 0, 0, "Event log...");
 		add(eventText);
-		
-		addText("Press some buttons...");
 		
 		Lib.current.stage.addEventListener(Event.ACTIVATE, function(p:Dynamic):Void {
 			addText("App received ACTIVATE event");
@@ -30,6 +38,30 @@ class PlayState extends FlxState {
 		Lib.current.stage.addEventListener(Event.DEACTIVATE, function(p:Dynamic):Void {
 			addText("App received DEACTIVATE event");
 		});
+		
+		#if gamecircleleaderboards
+		addText("Will set GameCircle listener");
+		GameCircleLeaderboards.get.setListener(new DemoGameCircleListener(this));
+		#end
+		
+		#if googleplayleaderboards
+		addText("Will set Google Play listener");
+		GooglePlayLeaderboards.get.setListener(new DemoGooglePlayListener(this));
+		#end
+		
+		Leaderboards.init();
+		
+		Leaderboards.signIn();
+		
+		add(new BigButton("Open Leaderboards", function() {
+			addText("Will attempt to open leaderboards");
+			//Leaderboards.openLeaderboard();
+		}, 100, Std.int(FlxG.height / 2)));
+		
+		add(new BigButton("Open Achievements", function() {
+			addText("Will attempt to open achievements ");
+			Leaderboards.openAchievements();
+		}, FlxG.width - 100, Std.int(FlxG.height / 2)));
 	}
 	
 	/**
@@ -42,7 +74,7 @@ class PlayState extends FlxState {
 	/**
 	 * Add a message to the text event log
 	 */
-	private function addText(text:String):Void {
+	public function addText(text:String):Void {
 		eventText.text = text + "\n" + eventText.text;
 	}
 	
@@ -55,8 +87,8 @@ class PlayState extends FlxState {
 }
 
 class BigButton extends FlxButton {
-	public function new(text:String, onPress:Void->Void) {
-		super(0, 0, text, onPress);
+	public function new(text:String, onPress:Void->Void, x:Int, y:Int) {
+		super(x, y, text, onPress);
 		scale.set(2, 2);
 		updateHitbox();
 	}

@@ -29,8 +29,18 @@
 	<haxelib name="flixel" />
 	
 	<!-- Change this line to the version of the leaderboards module you want to build against! -->
-	<!-- One of the following: googleplaygames gamecircle gamecenter gamejolt kongregate -->
-	<haxedef name="gamecircle" />
+	<set name="gamecircleleaderboards" />
+	<!-- <set name="googleplayleaderboards" /> -->
+	<!-- <set name="gammecenterleaderboards" /> -->
+	<!-- <set name="gamejoltleaderboards" /> -->
+	<!-- <set name="kongregateleaderboards" /> -->
+	<!-- <set name="newgroundsleaderboards" /> -->
+	<!-- <set name="steamworksleaderboards" /> -->
+	
+	<section if="gamecircleleaderboards">
+		<haxedef name="gamecircleleaderboards" />
+		<android minimum-sdk-version="10" />
+	</section>
 	
 	<include path="lib/samcodes-leaderboards" />
 	
@@ -72,9 +82,4 @@
 	
 	<!--The swf version should be at least 11.2 without FLX_NO_MOUSE_ADVANCED -->
 	<set name="SWF_VERSION" value="11.2" />
-	
-	<section if="android">
-		<!-- Targets Android Marshmallow -->
-		<android target-sdk-version="23" />
-	</section>
 </project>
