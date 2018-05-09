@@ -50,6 +50,31 @@ class PlayState extends FlxState {
 		GooglePlayLeaderboards.get.setListener(new DemoGooglePlayListener(this));
 		#end
 		
+		#if gamecenterleaderboards
+		#end
+		
+		#if gamejoltleaderboards
+		// TODO
+		Leaderboards.gameJoltGameId:Int = 0;
+		Leaderboards.gameJoltPrivateKey:String = null;
+		Leaderboards.gameJoltAutoAuth:Bool = false;
+		Leaderboards.gameJoltUserName:String = null;
+		Leaderboards.gameJoltUserToken:String = null;
+		#end
+		
+		#if newgroundsleaderboards
+		Leaderboards.newgroundsPrivateKey:String = null;
+		Leaderboards.newgroundsGameId:String = null;
+		Leaderboards.newgroundsShowPopUp:Bool = false;
+		Leaderboards.onNewgroundsConnected = function(result:Bool) {
+			// TODO
+		};
+		#end
+	
+		#if steamworksleaderboards
+		Leaderboards.steamGameId = 0; // TODO
+		#end
+		
 		Leaderboards.init();
 		
 		Leaderboards.signIn();
