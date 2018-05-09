@@ -40,6 +40,10 @@
 	<section if="gamecircleleaderboards">
 		<haxedef name="gamecircleleaderboards" />
 		<android minimum-sdk-version="10" />
+		
+		<!-- GameCircle API key -->
+		<template path="resources/gamecircle/debug_gamecircleapikey.txt" rename="assets/api_key.txt" if="debug" />
+		<template path="resources/gamecircle/release_gamecircleapikey.txt" rename="assets/api_key.txt" unless="debug" />
 	</section>
 	
 	<include path="lib/samcodes-leaderboards" />
