@@ -6,17 +6,18 @@ import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.util.FlxColor;
-import listener.DemoGameCircleListener;
-import listener.DemoGooglePlayListener;
+import ids.LeaderboardIds;
 import openfl.Lib;
 import openfl.events.Event;
 
 #if gamecircleleaderboards
 import extension.leaderboards.GameCircleLeaderboards;
+import listener.DemoGameCircleListener;
 #end
 
 #if googleplayleaderboards
 import extension.leaderboards.GooglePlayLeaderboards;
+import listener.DemoGooglePlayListener;
 #end
 
 class PlayState extends FlxState {
@@ -55,20 +56,13 @@ class PlayState extends FlxState {
 		
 		add(new BigButton("Open Leaderboards", function() {
 			addText("Will attempt to open leaderboards");
-			//Leaderboards.openLeaderboard();
+			Leaderboards.openLeaderboard(LeaderboardIds.DEMO_LEADERBOARD_ID);
 		}, 100, Std.int(FlxG.height / 2)));
 		
 		add(new BigButton("Open Achievements", function() {
 			addText("Will attempt to open achievements ");
 			Leaderboards.openAchievements();
 		}, FlxG.width - 100, Std.int(FlxG.height / 2)));
-	}
-	
-	/**
-	 * Update the state
-	 */
-	override public function update(dt:Float):Void {
-		super.update(dt);
 	}
 	
 	/**
