@@ -1,8 +1,6 @@
 # Haxe Leaderboards Demo
 
-WORK IN PROGRESS
-
-Minimal demonstration of achievements and leaderboards in Haxe.
+Completely unfinished demonstration of different achievements and leaderboards libraries in Haxe. Don't use this.
 
 ## Features
 Demonstrates simple sign in, leaderboards and achievements via the following libraries:
